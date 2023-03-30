@@ -3,7 +3,7 @@ name: test
 env:
   'prodution': '[{ "name": "apple", "quantity": 1 },{ "name": "orange", "quantity": 2 }]'
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       env:
         type: string
