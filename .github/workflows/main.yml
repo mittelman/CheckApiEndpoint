@@ -17,10 +17,8 @@ jobs:
         run: |
           for ii in production production-eu
           do
-            echo '${{ env["production-eu"] }}'
+            echo "${{ env['$ii'] }}"
             echo 'g'
           done
 
-      
-      
       
