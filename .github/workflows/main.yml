@@ -15,22 +15,14 @@ jobs:
     steps:
     - name: Set environment variables
       run: |
-        echo "a=valueA" >> $GITHUB_ENV
-        echo "b=valueB" >> $GITHUB_ENV
-        echo "c=valueC" >> $GITHUB_ENV
+        export a=valueA
+        export b=valueB
+        export c=valueC
 
     - name: Print environment variables
       run: |
         for i in a b c; do
-          echo "${{ env[$i] }}"
+          echo "${!i}"
         done
-
-    - name: step-1
-      run: |
-        for i in production-ca production-eu
-        do
-          echo "${{ env[$i] }}"
-          echo 'g'
-          done
         
 
