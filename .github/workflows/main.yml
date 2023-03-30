@@ -15,10 +15,9 @@ jobs:
     steps:
       - name: step-1
         run: |
-          for ii in production production-eu
+          for i in production-ca production-eu
           do
-            echo "${{ env[\"$ii\"] }}"
+            echo "${{ env[$i] }}"
             echo 'g'
           done
 
-      
