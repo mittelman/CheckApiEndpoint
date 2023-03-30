@@ -2,6 +2,8 @@ name: test
 
 env:
   production: '[{ "name": "apple", "quantity": 1 },{ "name": "orange", "quantity": 2 }]'
+  production-eu: something.values.yaml
+  production-ca: something2.values.yaml
   myenv: production
 on:
   push:
@@ -13,8 +15,12 @@ jobs:
     steps:
       - name: step-1
         run: |
-          echo "${{ fromJson(env[env.myenv]) }}"
-          echo 'g'
+          for ii in production production-eu
+          do
+            echo "${{ env[ii] }}"
+            echo 'g'
+          done
+
       
       
       
