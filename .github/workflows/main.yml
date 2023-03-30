@@ -1,0 +1,21 @@
+name: test
+
+env:
+  'prodution': '[{ "name": "apple", "quantity": 1 },{ "name": "orange", "quantity": 2 }]'
+on:
+  workflow_call:
+    inputs:
+      env:
+        type: string
+        default: production
+jobs:
+  my-job:
+    runs-on: linux
+    steps:
+      - name: step-1
+        run: |
+          echo env.${{inputs.env}}[1]
+          echo 'g'
+      
+      
+      
