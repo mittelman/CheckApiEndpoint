@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: step-1
         run: |
-          echo "${{ fronJson(env[env.myenv]) }}"
+          echo "${{ fromJson(env[env.myenv]) }}"
           echo 'g'
       
       
